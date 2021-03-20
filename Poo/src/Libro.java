@@ -27,6 +27,8 @@ public class Libro {
     public String titulo;
     public String isbn;
     public String autor;
+    public boolean estaPrestado;
+    public String arrendatario;
 
     public Libro(){}
 
@@ -34,13 +36,23 @@ public class Libro {
         this.titulo = titulo;
         this.isbn = isbn;
         this.autor = autor;
+        this.estaPrestado=false;
     }
 
-    public void prestamo(){}
-    public void devolucion(){}
+    public void prestamo(String arr){
+        if(!this.estaPrestado) {
+            this.estaPrestado = true;
+            this.arrendatario = arr;
+        }
+    }
+
+    public void devolucion(){
+        this.estaPrestado=false;
+        this.arrendatario = "";
+    }
 
     @Override
     public String toString() {
-        return titulo + ", "+autor+", "+ isbn;
+        return titulo + ", " + autor + ", " + isbn;
     }
 }

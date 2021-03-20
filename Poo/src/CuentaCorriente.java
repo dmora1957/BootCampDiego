@@ -44,9 +44,11 @@ public class CuentaCorriente {
     public void ingreso(double cantidad){
         this.saldo += cantidad;
     }
+
     public void egreso(double cantidad){
         this.saldo -= cantidad;
     }
+
     public void reintegro(double cantidad){
         this.ingreso(cantidad);
     }
