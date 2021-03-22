@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="748472a0-7f8b-4bbe-a21a-10a9dfa291b3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/ProjectTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/out/production/ProjectTest/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject/TestProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestProject/pom.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1q7mF2wQe306K1n3yZ0Y9WtGpnC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RedixSort" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="748472a0-7f8b-4bbe-a21a-10a9dfa291b3" name="Default Changelist" comment="" />
+      <created>1616438897185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616438897185</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RedixSort/src/Radix/RadixSortEjerc.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
