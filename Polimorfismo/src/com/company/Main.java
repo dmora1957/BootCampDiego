@@ -1,7 +1,11 @@
 package com.company;
 
-import com.company.InterfacesAndAbstracts.Persona;
-import com.company.InterfacesAndAbstracts.SortUtil;
+import com.company.Comparator.Persona;
+import com.company.Comparator.SortUtil;
+import com.company.PracticoFactoria.MiFactory;
+import com.company.PracticoFactoria.Sorter;
+
+import java.util.Comparator;
 
 public class Main {
 
@@ -15,7 +19,15 @@ public class Main {
                 new Persona("Yaquelin Correa",26539876)
         };
 
-        SortUtil.ordenar(personas);
+       var sorter =  MiFactory.getInstance("sorter");
+        Comparator <Persona> c = (a,b) -> b.getDni()-a.getDni();
+        ((Sorter)sorter).sort(personas,c);
+        //SortUtil.ordenar(personas);
 
+        Comparator <Persona> c2 = (a,b) -> b.getDni()-a.getDni();
+        SortUtil.ordenar(personas, c2);
+
+        Comparator <Persona> c3 = (a,b) -> b.getNombre().compareTo(a.getNombre());
+        SortUtil.ordenar(personas, c3);
     }
 }
