@@ -1,0 +1,18 @@
+[
+    {
+    "location":"Palermo",
+    "price":123
+    },
+    {
+    "location":"Belgrano",
+    "price":263
+    },
+    {
+    "location":"Montevideo",
+    "price":587
+    },
+    {
+    "location":"Rocha",
+    "price":63
+    }
+]
