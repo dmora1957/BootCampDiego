@@ -5,6 +5,7 @@ import com.calculadoracalorias.demo.dtos.IngredientDto;
 import com.calculadoracalorias.demo.dtos.ResponseDto;
 import com.calculadoracalorias.demo.dtos.ResponseIngredientDto;
 import com.calculadoracalorias.demo.entities.IngredientNutritionalInfoDto;
+import com.calculadoracalorias.demo.exceptions.IngredientNotFound;
 import com.calculadoracalorias.demo.repositories.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class IngredientServices {
     @Autowired
     private IngredientRepository ingredientRepository;
     
-    public ResponseDto calculate(DishDto unPlato) {
+    public ResponseDto calculate(DishDto unPlato) throws IngredientNotFound {
         var totalCalories = 0;
         List<ResponseIngredientDto> ingredientsWithCalories = new ArrayList<>();
         ResponseIngredientDto greaterCalories = new ResponseIngredientDto("",0,0);
@@ -38,7 +39,7 @@ public class IngredientServices {
         return new ResponseDto(totalCalories, ingredientsWithCalories,greaterCalories);
     }
 
-    public List<ResponseDto> calculate(List<DishDto> platos) {
+    public List<ResponseDto> calculate(List<DishDto> platos) throws IngredientNotFound {
     var results = new ArrayList<ResponseDto>();
 
         for (var p:platos) {

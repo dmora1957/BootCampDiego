@@ -1,6 +1,7 @@
 package com.calculadoracalorias.demo.repositories;
 
 import com.calculadoracalorias.demo.entities.IngredientNutritionalInfoDto;
+import com.calculadoracalorias.demo.exceptions.IngredientNotFound;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
@@ -14,7 +15,7 @@ import java.util.Optional;
 public class IngredientRepository implements IIngredientRepository{
 
     @Override
-    public IngredientNutritionalInfoDto findCaloriesByFood(String food) {
+    public IngredientNutritionalInfoDto findCaloriesByFood(String food) throws IngredientNotFound {
         List<IngredientNutritionalInfoDto> ingredientDtos = null;
         ingredientDtos = loadDataBase();
         IngredientNutritionalInfoDto result = null;
@@ -26,6 +27,10 @@ public class IngredientRepository implements IIngredientRepository{
             if(item.isPresent())
             {
                 result = item.get();
+            }
+            else
+            {
+                throw new IngredientNotFound(food);
             }
         }
         return result;
