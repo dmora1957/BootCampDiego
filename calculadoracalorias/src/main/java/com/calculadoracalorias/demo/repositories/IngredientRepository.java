@@ -24,6 +24,7 @@ public class IngredientRepository implements IIngredientRepository{
             Optional<IngredientNutritionalInfoDto> item = ingredientDtos.stream()
                     .filter(priceDto -> priceDto.getName().equals(food))
                     .findFirst();
+
             if(item.isPresent())
             {
                 result = item.get();
