@@ -6,6 +6,13 @@ import com.desafioproductos.demo.exceptions.FileLoadException;
 import com.desafioproductos.demo.exceptions.GenericException;
 import com.desafioproductos.demo.helpers.FileHandler;
 import com.desafioproductos.demo.repositories.interfaces.CustomerRepository;
+import com.mercadolibre.kvsclient.IQKVSContainerKvsClient;
+import com.mercadolibre.kvsclient.KVSLowLevelClient;
+import com.mercadolibre.kvsclient.QKVSContainerLowLevelClient;
+import com.mercadolibre.kvsclient.exceptions.KvsException;
+import com.mercadolibre.kvsclient.item.Item;
+import com.mercadolibre.kvsclient.kvsapi.KvsapiConfiguration;
+import com.mercadolibre.kvsclient.kvsapi.KvsapiLowLevelClient;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -88,6 +95,26 @@ public class CustomerRepositoryImp implements CustomerRepository {
             result = item.get();
 
         return result;
+    }
+
+    @Override
+    public CustomerDto updateCustomer(Integer id, CustomerDto newCustomer) throws KvsException {
+        KvsapiConfiguration config = KvsapiConfiguration.builder().withMaxRetries(2).build();
+        IQKVSContainerKvsClient client = new QKVSContainerLowLevelClient(config, "KEY_VALUE_STORE_MY_CONTAINER_CONTAINER_NAME");
+        Item item = new Item();
+        item.setValue(newCustomer);
+        item.setKey(newCustomer.getDocument());
+        client.update(item);
+        return newCustomer;
+    }
+
+    @Override
+    public Integer deleteCustomer(Integer id) throws KvsException {
+        KvsapiConfiguration config = KvsapiConfiguration.builder().withMaxRetries(2).build();
+        IQKVSContainerKvsClient client = new QKVSContainerLowLevelClient(config, "KEY_VALUE_STORE_MY_CONTAINER_CONTAINER_NAME");
+
+        client.delete(id.toString());
+        return id;
     }
 
     /**

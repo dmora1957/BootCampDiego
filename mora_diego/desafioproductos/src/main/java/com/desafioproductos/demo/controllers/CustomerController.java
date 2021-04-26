@@ -2,15 +2,12 @@ package com.desafioproductos.demo.controllers;
 
 import com.desafioproductos.demo.dtos.CustomerDto;
 import com.desafioproductos.demo.dtos.CustomerFilterDto;
-import com.desafioproductos.demo.dtos.FilterDto;
 import com.desafioproductos.demo.exceptions.*;
-import com.desafioproductos.demo.services.ArticleService;
 import com.desafioproductos.demo.services.CustomerService;
+import com.mercadolibre.kvsclient.exceptions.KvsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.PostConstruct;
 
 @RestController
 @RequestMapping("/customer")
@@ -48,6 +45,29 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity addCustomer(@RequestBody CustomerDto newCustomer) throws GenericException {
         return new ResponseEntity<>(this._service.addCustomer(newCustomer), HttpStatus.OK);
+    }
+
+    /**
+     * Add new customer
+     * @param id the customer name filter
+     * @param newCustomer the customer name filter
+     * @return 200 status code
+     * @throws DocumentAlreadyExistsException 422 status code if cant be added
+     */
+    @PutMapping
+    public ResponseEntity updateCustomer(@RequestParam int id, @RequestBody CustomerDto newCustomer) throws GenericException, KvsException {
+        return new ResponseEntity<>(this._service.updateCustomer(id, newCustomer), HttpStatus.OK);
+    }
+
+    /**
+     * Add new customer
+     * @param id the customer name filter
+     * @return 200 status code
+     * @throws DocumentAlreadyExistsException 422 status code if cant be added
+     */
+    @DeleteMapping
+    public ResponseEntity deleteCustomer(@RequestParam int id) throws GenericException, KvsException {
+        return new ResponseEntity<>(this._service.deleteCustomer(id), HttpStatus.OK);
     }
 
 }

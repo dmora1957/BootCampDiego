@@ -3,7 +3,6 @@ package com.desafioproductos.demo.services;
 import com.desafioproductos.demo.dtos.ArticleDto;
 import com.desafioproductos.demo.dtos.ArticlesCollectionResponseDto;
 import com.desafioproductos.demo.dtos.FilterDto;
-import com.desafioproductos.demo.dtos.TicketsCollectionResponseDto;
 import com.desafioproductos.demo.exceptions.EmptyResponseException;
 import com.desafioproductos.demo.exceptions.FileLoadException;
 import com.desafioproductos.demo.exceptions.FilterNotValidException;

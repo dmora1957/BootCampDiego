@@ -8,6 +8,7 @@ import com.desafioproductos.demo.exceptions.MissedDataException;
 import com.desafioproductos.demo.helpers.CustomerNameSorterAsc;
 import com.desafioproductos.demo.helpers.CustomerNameSorterDesc;
 import com.desafioproductos.demo.repositories.interfaces.CustomerRepository;
+import com.mercadolibre.kvsclient.exceptions.KvsException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -82,6 +83,26 @@ public class CustomerService {
     }
 
     /**
+     * Create new customer
+     * @param newCustomer new customer object
+     * @return customer with identifier
+     */
+    public CustomerDto updateCustomer(Integer id, CustomerDto newCustomer) throws GenericException, KvsException {
+
+        return _repository.updateCustomer(id, newCustomer);
+    }
+
+    /**
+     * Create new customer
+     * @param id new customer object
+     * @return customer with identifier
+     */
+    public Integer deleteCustomer(Integer id) throws GenericException, KvsException {
+
+        return _repository.deleteCustomer(id);
+    }
+
+    /**
      * validates new customer
      * @param newCustomer new customer object
      */
@@ -95,4 +116,6 @@ public class CustomerService {
         if(_repository.findCustomerByDocument(newCustomer.getDocument()) != null)
             throw new DocumentAlreadyExistsException(newCustomer.getDocument() + " already exists");
     }
+
+
 }
