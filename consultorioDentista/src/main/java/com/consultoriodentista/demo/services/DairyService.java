@@ -18,7 +18,8 @@ public class DairyService implements IDairyService {
 
     private IDiaryRepository repo;
 
-    private ModelMapper mapper = new ModelMapper();
+    @Autowired
+    private ModelMapper mapper;
 
     public DairyService(IDiaryRepository repo)
     {

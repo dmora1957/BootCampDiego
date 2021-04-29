@@ -33,4 +33,10 @@ public class PatientController {
         return new ResponseEntity<>( this._service.findById(id), HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity deletePatient(@RequestParam Long id)  {
+        this._service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

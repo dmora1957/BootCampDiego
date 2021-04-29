@@ -33,4 +33,9 @@ public class DairyController {
         return new ResponseEntity<>( this._service.findById(id), HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity deleteDairy(@RequestParam Long id)  {
+        this._service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

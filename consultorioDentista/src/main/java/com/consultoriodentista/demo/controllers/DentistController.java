@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+
 @RestController
 @RequestMapping("/dentist")
 public class DentistController {
@@ -31,4 +33,14 @@ public class DentistController {
         return new ResponseEntity<>( this._service.findById(id), HttpStatus.OK);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity deleteDentist(@RequestParam Long id)  {
+        this._service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("more-than-two-turns/{date}")
+    public ResponseEntity getTurn(@RequestParam String date) throws ParseException {
+        return new ResponseEntity<>( this._service.findDentistWithMoreThanTwoTurns(date), HttpStatus.OK);
+    }
 }

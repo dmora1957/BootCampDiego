@@ -10,6 +10,7 @@ import com.consultoriodentista.demo.repositories.IPatientRepository;
 import com.consultoriodentista.demo.services.interfaces.IPatientService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +20,8 @@ import java.util.List;
 public class PatientService implements IPatientService {
 
     private IPatientRepository repo;
-    private ModelMapper mapper = new ModelMapper();
+    @Autowired
+    private ModelMapper mapper;
 
     public PatientService(IPatientRepository repo)
     {

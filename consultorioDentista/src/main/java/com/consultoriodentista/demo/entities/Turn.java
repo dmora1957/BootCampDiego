@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Data
@@ -26,4 +27,12 @@ public class Turn {
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
+
+    @OneToOne
+    @JoinColumn(name = "reprogrammed_turn_id",  referencedColumnName = "id", nullable = true)
+    private Turn reprogrammedTurn;
+
+    @OneToOne(mappedBy = "reprogrammedTurn")
+    private Turn oldTurn;
+
 }
